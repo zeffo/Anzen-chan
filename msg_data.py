@@ -1,1 +1,1 @@
-msg_data = {'key1': ['hello world', 'Drift Asimov']}
+msg_data = {}
