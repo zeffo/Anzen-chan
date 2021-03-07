@@ -14,7 +14,7 @@ function_color = 0xE7E874
 
 @client.event
 async def on_ready():
-    print("Let's win this one")
+    print(f"Logged in as {client.user}")
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Your IP Address"))
 
 @client.command()
