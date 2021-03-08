@@ -25,7 +25,7 @@ class Message(commands.Cog):
                 embed.add_field(name = "Message", value = msg, inline = False)
                 embed.set_footer(text = "Use this Key to access this message anytime")
                 embed.set_author(name = self.client.user.name, icon_url = self.client.user.avatar_url)
-                await self.save_data(msg_data)
+                self.save_data(msg_data)
                 await ctx.send(embed =embed)
             else:
                 msg_data[key] = [msg, ctx.author.name]
@@ -34,7 +34,7 @@ class Message(commands.Cog):
                 embed.add_field(name = "Message", value = msg, inline = False)
                 embed.set_footer(text = "Use this Key to access this message anytime")
                 embed.set_author(name = self.client.user.name ,icon_url = self.client.user.avatar_url)
-                await self.save_data(msg_data)
+                self.save_data(msg_data)
                 await ctx.send(embed = embed)
                 return
         
@@ -76,7 +76,7 @@ class Message(commands.Cog):
         
         await ctx.send(embed = discord.Embed(title = "Secret message for you", description = reversed_msg, color = function_color))
 
-    async def save_data(self, data):
+    def save_data(self, data):
         data = str(data)
         data = "msg_data = "+data
         with open ("msg_data.py","w") as datafile:
